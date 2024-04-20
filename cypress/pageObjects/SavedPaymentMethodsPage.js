@@ -1,7 +1,7 @@
 import { BasePage } from "../pageObjects/BasePage";
 
 export class SavedPaymentMethodsPage extends BasePage {
-    static get addNewCardButton() {
+    static get addNewCardBtn() {
         return cy.get(".mat-expansion-panel");
     }
 
@@ -27,7 +27,7 @@ export class SavedPaymentMethodsPage extends BasePage {
         return cy.get("#submitButton");
     }
 
-    static get validateName() {
+    static get cardName() {
         return cy.get(".mat-cell.cdk-cell.cdk-column-Name.mat-column-Name.ng-star-inserted");
     }
 }

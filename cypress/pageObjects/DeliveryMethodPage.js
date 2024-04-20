@@ -6,7 +6,7 @@ export class DeliveryMethodPage extends BasePage {
         return cy.get(".svg-inline--fa.fa-truck.fa-w-20");
     }
 
-    static get selectContinueButton() {
+    static get continueBtn() {
         return cy.get("[aria-label='Proceed to delivery method selection']");
     }
 

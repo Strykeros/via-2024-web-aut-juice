@@ -30,11 +30,11 @@ export class CreateAddressPage extends BasePage {
         return cy.get("[placeholder='Please provide a state.']")
     }
 
-    static get submitButton() {
+    static get submitAddressBtn() {
         return cy.get("#submitButton")
     }
 
-    static get validateName() {
+    static get AddressName() {
         return cy.get(".mat-cell.cdk-cell.cdk-column-Name.mat-column-Name")
     }
 

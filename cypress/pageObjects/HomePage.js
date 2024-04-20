@@ -29,27 +29,27 @@ export class HomePage extends BasePage {
     return cy.get("#searchQuery");
   }
 
-  static get searchFieldInput() {
+  static get searchInput() {
     return cy.get(".mat-input-element");
   }
 
-  static get selectItem() {
+  static get juiceSelect() {
     return cy.get(".item-name");
   }
 
-  static get validateDialog() {
+  static get checkCard() {
     return cy.get(".mat-dialog-container");
   }
 
-  static get closeDialogButton() {
+  static get closeDialogBtn() {
     return cy.get(".close-dialog");
   }
 
-  static get expandReviews() {
+  static get openReviewsBtn() {
     return cy.get("#mat-expansion-panel-header-0");
   }
 
-  static get readReview() {
+  static get getReview() {
     return cy.get(".mat-tooltip-trigger.review-text");
   }
 
@@ -57,7 +57,7 @@ export class HomePage extends BasePage {
     return cy.get("[data-placeholder='What did you like or dislike?']");
   }
 
-  static get submitReview() {
+  static get sendReview() {
     return cy.get("#submitButton");
   }
 
@@ -69,15 +69,15 @@ export class HomePage extends BasePage {
     return cy.get(".mat-option-text");
   }
 
-  static get cardAmount() {
+  static get cardCount() {
     return cy.get(".mat-grid-tile-content");
   }
 
-  static get addToBasketButton() {
+  static get addToBasketBtn() {
     return cy.get(".btn-basket");
   }
 
-  static get basketButton() {
+  static get shoppingCartBtn() {
     return cy.get("[aria-label='Show the shopping cart']");
   }
 

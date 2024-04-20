@@ -56,17 +56,17 @@ describe("Juice-shop scenarios", () => {
       RegisterPage.securityQuestion.click();
         // Select  "Name of your favorite pet?"
        RegisterPage.securityQuestionOption.contains("Name of your favorite pet?").click();
-    //   // Fill in answer
+    // Fill in answer
      RegisterPage.petName.type("dog");
-    //   // Click Register button
+    // Click Register button
      RegisterPage.registerButton.click();
-    //   // Set email value to previously created email
+    // Set email value to previously created email
      LoginPage.loginEmail.type(generatedEmail);
-    //   // Set password value to previously used password value
+    // Set password value to previously used password value
      LoginPage.loginPassword.type("12345");
-    //   // Click login button
+    // Click login button
      LoginPage.loginButton.click();
-    //   // Click Account button
+    // Click Account button
     HomePage.accountBtn.click();
       // Validate that account name (with previously created email address) appears in the menu section
     });
@@ -79,73 +79,73 @@ describe("Juice-shop scenarios", () => {
     });
 
     it("Search and validate Lemon", () => {
-    //   // Click on search icon
-    //   // Search for Lemon
+    // Click on search icon
+    // Search for Lemon
      HomePage.searchField.type("Lemon");
-     HomePage.searchFieldInput.type("{enter}");
-    //   // Select a product card - Lemon Juice (500ml)
-     HomePage.selectItem.contains("Lemon Juice (500ml)").click();
-    //   // Validate that the card (should) contains "Sour but full of vitamins."
-     HomePage.validateDialog.should("contain.text", "Sour but full of vitamins.");
+     HomePage.searchInput.type("{enter}");
+    // Select a product card - Lemon Juice (500ml)
+     HomePage.juiceSelect.contains("Lemon Juice (500ml)").click();
+    // Validate that the card (should) contains "Sour but full of vitamins."
+     HomePage.checkCard.should("contain.text", "Sour but full of vitamins.");
     });
 
     // // Create scenario - Search 500ml and validate Lemon, while having multiple cards
     it("Search 500ml and validate cards", () => {
        // Click on search icon
-    //   // Search for 500ml
+    // Search for 500ml
        HomePage.searchField.type("500ml");
-    //   // press enter key
-       HomePage.searchFieldInput.type("{enter}");
-    //   // Select a product card - Lemon Juice (500ml)
-       HomePage.selectItem.contains("Lemon Juice (500ml)").click();
-    //   // Validate that the card (should) contains "Sour but full of vitamins."
-       HomePage.validateDialog.should("contain.text", "Sour but full of vitamins.");
+    // press enter key
+       HomePage.searchInput.type("{enter}");
+    // Select a product card - Lemon Juice (500ml)
+       HomePage.juiceSelect.contains("Lemon Juice (500ml)").click();
+    // Validate that the card (should) contains "Sour but full of vitamins."
+       HomePage.checkCard.should("contain.text", "Sour but full of vitamins.");
      });
 
     it("Search 500ml and validate cards", () => {
-    //   // Click on search icon
-    //   // Search for 500ml
+    // Click on search icon
+    // Search for 500ml
     HomePage.searchField.type("500ml");
-    //   // press enter key
-       HomePage.searchFieldInput.type("{enter}");
+    // press enter key
+       HomePage.searchInput.type("{enter}");
 
-    //   // Select a product card - Eggfruit Juice (500ml)
-       HomePage.selectItem.contains("Eggfruit Juice (500ml)").click();
-    //   // Validate that the card contains "Now with even more exotic flavour."
-       HomePage.validateDialog.should("contain.text", "Now with even more exotic flavour.");
-    //   // Close the card
-       HomePage.closeDialogButton.click();
+    // Select a product card - Eggfruit Juice (500ml)
+       HomePage.juiceSelect.contains("Eggfruit Juice (500ml)").click();
+    // Validate that the card contains "Now with even more exotic flavour."
+       HomePage.checkCard.should("contain.text", "Now with even more exotic flavour.");
+    // Close the card
+       HomePage.closeDialogBtn.click();
 
-    //   // Select a product card - Lemon Juice (500ml)
-       HomePage.selectItem.contains("Lemon Juice (500ml)").click();
-    //   // Validate that the card contains "Sour but full of vitamins."
-       HomePage.validateDialog.should("contain.text", "Sour but full of vitamins.");
-    //   // Close the card
-       HomePage.closeDialogButton.click();
+    // Select a product card - Lemon Juice (500ml)
+       HomePage.juiceSelect.contains("Lemon Juice (500ml)").click();
+    // Validate that the card contains "Sour but full of vitamins."
+       HomePage.checkCard.should("contain.text", "Sour but full of vitamins.");
+    // Close the card
+       HomePage.closeDialogBtn.click();
 
-    //   // Select a product card - Strawberry Juice (500ml)
-       HomePage.selectItem.contains("Strawberry Juice (500ml)").click();
-    //   // Validate that the card contains "Sweet & tasty!"
-       HomePage.validateDialog.should("contain.text", "Sweet & tasty!");
-    //   // Close the card
-       HomePage.closeDialogButton.click();
+    // Select a product card - Strawberry Juice (500ml)
+       HomePage.juiceSelect.contains("Strawberry Juice (500ml)").click();
+    // Validate that the card contains "Sweet & tasty!"
+       HomePage.checkCard.should("contain.text", "Sweet & tasty!");
+    // Close the card
+       HomePage.closeDialogBtn.click();
      });
 
 
     // // Test case for reading a review
     it("Read a review", () => {
-    //   // Click on search icon
-    //   // Search for King
+    // Click on search icon
+    // Search for King
        HomePage.searchField.type("King");
-       HomePage.searchFieldInput.type("{enter}");
-    //   // Select a product card - OWASP Juice Shop "King of the Hill" Facemask
-       HomePage.selectItem.contains('OWASP Juice Shop "King of the Hill" Facemask').click();
-    //   //wait for reviews to appear
+       HomePage.searchInput.type("{enter}");
+    // Select a product card - OWASP Juice Shop "King of the Hill" Facemask
+       HomePage.juiceSelect.contains('OWASP Juice Shop "King of the Hill" Facemask').click();
+    //wait for reviews to appear
        cy.wait(1000);
-    //   // Click expand reviews button/icon
-       HomePage.expandReviews.click();
-    //   // Read a review
-       HomePage.readReview.contains("K33p5 y0ur ju1cy 5plu773r 70 y0ur53lf!");
+    // Click expand reviews button/icon
+       HomePage.openReviewsBtn.click();
+    // Read a review
+       HomePage.getReview.contains("K33p5 y0ur ju1cy 5plu773r 70 y0ur53lf!");
      });
 
     // Create scenario - Add a review
@@ -153,19 +153,19 @@ describe("Juice-shop scenarios", () => {
       // Click on search icon
       HomePage.searchField.type("Raspberry");
       // Search for Raspberry
-      HomePage.searchFieldInput.type("{enter}");
+      HomePage.searchInput.type("{enter}");
       // Select a product card - Raspberry Juice (1000ml)
-      HomePage.selectItem.contains("Raspberry Juice (1000ml)").click();
+      HomePage.juiceSelect.contains("Raspberry Juice (1000ml)").click();
       // Type in review - "Tastes like metal"
       cy.wait(4000);
       HomePage.itemReview.type("Tastes like metal");
       cy.wait(4000);
       // Click Submit
-      HomePage.submitReview.click();
+      HomePage.sendReview.click();
       // Click expand reviews button/icon (wait for reviews to appear)
-      HomePage.expandReviews.click();
+      HomePage.openReviewsBtn.click();
       // Validate review -  "Tastes like metal"
-      HomePage.readReview.contains("Tastes like metal");
+      HomePage.getReview.contains("Tastes like metal");
     });
 
     // Create scenario - Validate product card amount
@@ -181,7 +181,7 @@ describe("Juice-shop scenarios", () => {
       HomePage.pagination.click();
       HomePage.paginationSelect.contains("36").click();
       // Validate that the amount of cards is 35
-      HomePage.cardAmount.should("have.length", 35);
+      HomePage.cardCount.should("have.length", 35);
     });
 
 
@@ -189,48 +189,49 @@ describe("Juice-shop scenarios", () => {
     it("Buy Girlie T-shirt", () => {
       // Click on search icon
       HomePage.searchField.type("Girlie");
+      cy.wait(2000);
       // Search for Girlie
-      HomePage.searchFieldInput.type("{enter}");
+      HomePage.searchInput.type("{enter}");
       // Add to basket "Girlie"
-      HomePage.addToBasketButton.click();
+      HomePage.addToBasketBtn.click();
       // Click on "Your Basket" button
-      HomePage.basketButton.click();
+      HomePage.shoppingCartBtn.click();
       // Create page object - BasketPage
       // Click on "Checkout" button
-      BasketPage.checkoutButton.click();
+      BasketPage.checkoutBtn.click();
       // Create page object - SelectAddressPage
       // Select address containing "United Fakedom"
-      SelectAddressPage.addressField.contains("United Fakedom").click();
+      SelectAddressPage.addressInput.contains("United Fakedom").click();
       // Click Continue button
-      SelectAddressPage.selectContinueButton.click();
+      SelectAddressPage.continueBtn.click();
       // Create page object - DeliveryMethodPage
       // Select delivery speed Standard Delivery
       DeliveryMethodPage.deliveryMethod.click();
       // Click Continue button
-      DeliveryMethodPage.selectContinueButton.click();
+      DeliveryMethodPage.continueBtn.click();
       // Create page object - PaymentOptionsPage
       // Select card that ends with "5678"
-      PaymentOptionsPage.cardPayment.click();
+      PaymentOptionsPage.cardOption.click();
       // Click Continue button
-      PaymentOptionsPage.selectContinueButton.click();
+      PaymentOptionsPage.continueBtn.click();
       // Create page object - OrderSummaryPage
       // Click on "Place your order and pay"
-      OrderSummaryPage.placeOrderButton.click();
+      OrderSummaryPage.buyBtn.click();
       // Create page object - OrderCompletionPage
       // Validate confirmation - "Thank you for your purchase!"
-      OrderCompletionPage.orderConfirmation.should("contain.text", "Thank you for your purchase!");
+      OrderCompletionPage.orderSuccessMsg.should("contain.text", "Thank you for your purchase!");
     });
 
     it("Add address", () => {
       // Click on Account
       HomePage.accountBtn.click();
       // Click on Orders & Payment
-      PaymentOptionsPage.ordersAndPayments.first().click();
+      PaymentOptionsPage.ordersBtn.first().click();
       // Click on My saved addresses
       SelectAddressPage.savedAddresses.click();
       // Create page object - SavedAddressesPage
       // Click on Add New Address
-      SavedAddressesPage.addNewAddressButton.click();
+      SavedAddressesPage.addAddressBtn.click();
       // Create page object - CreateAddressPage
       // Fill in the necessary information
       CreateAddressPage.country.type("United States");
@@ -243,9 +244,9 @@ describe("Juice-shop scenarios", () => {
       CreateAddressPage.city.type("Los angeles");
       CreateAddressPage.state.type("California");
       // Click Submit buttonAddressesPage
-      CreateAddressPage.submitButton.click();
+      CreateAddressPage.submitAddressBtn.click();
       // Validate that previously added address is visible
-      CreateAddressPage.validateName.should("contain.text", "Bob Lopez");
+      CreateAddressPage.AddressName.should("contain.text", "Bob Lopez");
 
     });
 
@@ -254,12 +255,12 @@ describe("Juice-shop scenarios", () => {
       // Click on Account
       HomePage.accountBtn.click();
       // Click on Orders & Payment
-      PaymentOptionsPage.ordersAndPayments.first().click();
+      PaymentOptionsPage.ordersBtn.first().click();
       // Click on My payment options
       PaymentOptionsPage.paymentOptions.click();
       // Create page object - SavedPaymentMethodsPage
       // Click Add new card
-      SavedPaymentMethodsPage.addNewCardButton.click();
+      SavedPaymentMethodsPage.addNewCardBtn.click();
       // Fill in Name
       cy.wait(4000);
       SavedPaymentMethodsPage.name.type("Bob Lopez");
@@ -273,7 +274,7 @@ describe("Juice-shop scenarios", () => {
       // Click Submit button
       SavedPaymentMethodsPage.submitButton.click();
       // Validate that the card shows up in the list
-      SavedPaymentMethodsPage.validateName.should("contain.text", "Bob Lopez");
+      SavedPaymentMethodsPage.cardName.should("contain.text", "Bob Lopez");
     });
   });
 });
